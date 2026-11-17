@@ -9,6 +9,7 @@ st.sidebar.button(
 st.link_button(
     "🔗 Dado retirado diretamente do IBGE",
     "http://170.84.40.52:2101/"
+)
 from streamlit_folium import st_folium
 
 st.set_page_config(
