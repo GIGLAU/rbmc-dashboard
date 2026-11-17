@@ -3,6 +3,11 @@ import pandas as pd
 import streamlit as st
 import folium
 
+st.link_button(
+    "🔗 Dado retirado diretamente do IBGE",
+    "http://170.84.40.52:2101/"
+)
+
 st.sidebar.button(
     "Atualizar RBMC"
 )
@@ -13,11 +18,6 @@ st.set_page_config(
     layout="wide"
 )
 st.title("🛰️ Rede NTRIP - IBGE")
-
-st.link_button(
-    "🔗 Dado retirado diretamente do IBGE",
-    "http://170.84.40.52:2101/"
-)
 
 conn = sqlite3.connect("rbmc.db")
 
