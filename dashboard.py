@@ -3,13 +3,26 @@ import pandas as pd
 import streamlit as st
 import folium
 
-st.sidebar.button(
-    "Atualizar RBMC"
-)
-st.link_button(
-    "🔗 Dado retirado diretamente do IBGE",
-    "http://170.84.40.52:2101/"
-)
+col1, col2 = st.columns([1,1])
+
+with col1:
+
+    if st.button("🔄 Atualizar dados RBMC"):
+        import subprocess
+
+        subprocess.run(
+            ["python", "atualizar_rbmc.py"]
+        )
+
+        st.rerun()
+
+with col2:
+
+    st.link_button(
+        "🌐 Dado retirado diretamente do IBGE",
+        "http://170.84.40.52:2101/"
+    )
+    
 from streamlit_folium import st_folium
 
 st.set_page_config(
